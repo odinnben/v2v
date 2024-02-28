@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Piano Application</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Tone -->
+    <script src="https://unpkg.com/tone"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+    
+    
+</head>
+
+<body>
+    <h1>Piano Application</h1>
+    <div id="controlDiv">
+        <div class="controlSubDiv">
+            <label for="tunesDrop">Tune:</label>
+            <select name="tunes" id="tunesDrop">
+                <!-- <option value="0">Für Elise</option>
+                <option value="1">The Godfather</option>
+                <option value="3">Seven Nation Army</option> -->
+            </select>
+            
+        <button id="tunebtn" onclick="getSelectedTuneId()"><img class="controlimg" src="public/play.png" alt="Play the selected tune."></button>
+        </div>
+        <div class="controlSubDiv">
+            <label for="recordbtn">Record:</label>
+            <button id="recordbtn"><img class="controlimg" src="public/record.png" alt="Record a new tune."></button>
+            <button id="stopbtn" disabled><img class="controlimg" src="public/stop.png"
+                    alt="Stop recording of tune."></button>
+            <input type="text" id="recordName" name="recordName" placeholder="Tune name" />
+        </div>
+    </div>
+    <br>
+    
+    <br>
+
+    <div id="keyboardDiv">
+        <button onmousedown="JavaScript:playNote('c4')" id="c4" class="whitebtn">
+            C4<br />
+            (a)</button><button onmousedown="JavaScript:playNote('c#4')" onkeydown="JavaScript:keydown('d4')" id="c#4"  class="blackbtn">
+            C#4<br />
+            (w)</button><button onmousedown="JavaScript:playNote('d4')" onkeydown="JavaScript:playNote('d#4')" id="d4"  class="whitebtn">
+            D4<br />
+            (s)</button><button onmousedown="JavaScript:playNote('d#4')" onkeydown="JavaScript:playNote('e4')" id="d#4"  class="blackbtn">
+            D#4<br />
+            (e)</button><button onmousedown="JavaScript:playNote('e4')" onkeydown="JavaScript:playNote('f4')" id="e4"  class="whitebtn">
+            E4<br />
+            (d)</button><button onmousedown="JavaScript:playNote('f4')" onkeydown="JavaScript:playNote('f#4')" id="f4"  class="whitebtn">
+            F4<br />
+            (f)</button><button onmousedown="JavaScript:playNote('f#4')" onkeydown="JavaScript:playNote('g4')" id="f#4"  class="blackbtn">
+            F#4<br />
+            (t)</button><button onmousedown="JavaScript:playNote('g4')" onkeydown="JavaScript:playNote('g#4')" id="g4"  class="whitebtn">
+            G4<br />
+            (g)</button><button onmousedown="JavaScript:playNote('g#4')" onkeydown="JavaScript:playNote('a4')" id="g#4"  class="blackbtn">
+            G#4<br />
+            (y)</button><button onmousedown="JavaScript:playNote('a4')" onkeydown="JavaScript:playNote('bb4')" id="a4"  class="whitebtn">
+            A4<br />
+            (h)</button><button onmousedown="JavaScript:playNote('bb4')" onkeydown="JavaScript:playNote('b4')" id="bb4"  class="blackbtn">
+            Bb4<br />
+            (u)</button><button onmousedown="JavaScript:playNote('b4')" onkeydown="JavaScript:playNote('c5')" id="b4"  class="whitebtn">
+            B4<br />
+            (j)</button><button onmousedown="JavaScript:playNote('c5')" onkeydown="JavaScript:playNote('c#5')" id="c5"  class="whitebtn">
+            C5<br />
+            (k)</button><button onmousedown="JavaScript:playNote('c#5')" onkeydown="JavaScript:playNote('d5')" id="c#5"  class="blackbtn">
+            C#5<br />
+            (o)</button><button onmousedown="JavaScript:playNote('d5')" onkeydown="JavaScript:playNote('d#5')" id="d5"  class="whitebtn">
+            D5<br />
+            (l)</button><button onmousedown="JavaScript:playNote('d#5')" onkeydown="JavaScript:playNote('e5')" id="d#5"  class="blackbtn">
+            D#5<br />
+            (p)</button><button onmousedown="JavaScript:playNote('e5')" onkeydown="JavaScript:playNote('d4')" id="e5" class="whitebtn">
+            E5<br />
+            (;)</button>
+    </div>
+    <div id="tooSmallWarning"><img id="oopsimg" src="oops.jpg" alt="An image saying oops.">
+        <p>This website requires at least 600px screen width.</p>
+    </div>
+</body>
+
+</html>
