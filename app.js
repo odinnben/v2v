@@ -40,7 +40,7 @@ function keydown(event) {
 async function getTunes() {
     console.log('Fetching tunes...');
     try {
-        const response = await axios.get('https://github.com/odinnben/v2v/blob/main/assignment2_backend/index.js');
+        const response = await axios.get('http://localhost:3000/api/v1/tunes');
         const tunes = response.data;
 
         // Debugging: print the fetched tunes
@@ -73,7 +73,7 @@ async function playTune(tuneId) {
     Tone.Transport.clear();
 
     try {
-        const response = await axios.get('https://github.com/odinnben/v2v/blob/main/assignment2_backend/index.js');
+        const response = await axios.get('http://localhost:3000/api/v1/tunes');
         const tunes = response.data;
 
         // Find the tune with the given id
