@@ -66,12 +66,7 @@ async function getTunes() {
 }
 
 async function playTune(tuneId) {
-    // Stop the Tone.Transport before playing a new tune
-    // Stop any currently playing notes
-    Tone.Transport.bpm.value = 0;
-    Tone.Transport.stop();
-    Tone.Transport.clear();
-
+    
     try {
         const response = await axios.get('http://localhost:3000/api/v1/tunes');
         const tunes = response.data;
